@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" th:fragment="html (content)">
+<html
+  lang="en"
+  th:fragment="layout(content, htmlType, title, head)"
+  xmlns:th="http://www.thymeleaf.org"
+  th:with="siteTitle = ${not #strings.isEmpty(title) ?  title  :  #strings.isEmpty(site.subtitle) ? site.title :  site.title +' - ' +site.subtitle }"
+>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title th:text="${site.title}"></title>
-    <link rel="stylesheet" th:href="@{/assets/dist/style.css}" href="./assets/dist/style.css" />
-    <script th:src="@{/assets/dist/main.iife.js}"></script>
+    <th:block th:replace="~{modules/head :: head(htmlType = ${htmlType})}" />
+    <link
+      rel="stylesheet"
+      th:href="@{/assets/dist/style.css?v={version}(version=${theme.spec.version})}"
+      href="./assets/dist/style.css"
+    />
+    <script th:src="@{/assets/dist/main.iife.js?v={version}(version=${theme.spec.version})}"></script>
   </head>
+
   <body>
     <th:block th:replace="${content}" />
   </body>

@@ -1,5 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org" th:replace="~{modules/layout :: html(content = ~{::content})}">
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{modules/layout :: layout(content = ~{::content}, htmlType = 'index', title = null, head = ~{::head})}"
+>
+  <th:block th:fragment="head">
+    <th:block
+      th:replace="~{modules/common/open-graph :: open-graph(_title = ${site.title},
+                _permalink = '',
+                _cover = ${theme.config.other.opengraph.image},
+                _excerpt = ${site.seo.description},
+                _type = 'website')}"
+    ></th:block>
+  </th:block>
   <th:block th:fragment="content">
     <div class="mx-auto flex h-screen w-96 flex-col items-center justify-center">
       <ul class="w-full list-inside list-disc">
