@@ -1,7 +1,7 @@
 apiVersion: v1alpha1
 kind: Setting
 metadata:
-  name: theme-modern-starter-setting
+  name: halo-theme-novalinx-setting
 spec:
   forms:
     - group: post
