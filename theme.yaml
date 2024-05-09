@@ -19,3 +19,13 @@ spec:
   license:
     - name: "GPL-3.0"
       url: "https://github.com/halo-dev/halo-theme-novalinx/blob/main/LICENSE"
+  customTemplates:
+    page:
+      - name: 留言板
+        description: 留言板文章
+        screenshot:
+        file: page_leaving.html
+      - name: 友链
+        description: 友链模板
+        screenshot:
+        file: page_links.html
