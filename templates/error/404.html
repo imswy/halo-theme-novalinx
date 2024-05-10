@@ -14,13 +14,7 @@
   <meta name="author" content="${user.nickname!}">
   <meta name="site" content="${blog_url!}">
   <link rel="shortcut icon" size="32x32" href="${options.blog_favicon!}">
-  <th:block th:replace="~{modules/config :: config}" />
   <style>
-    html, body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
     .joe_page_404 {
       position: absolute;
       z-index: 10;
@@ -28,8 +22,6 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: #fff;
-      color: #666;
       text-align: center;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -80,25 +72,6 @@
     .joe_page_404 .error_link:hover {
       color: #6c63ff;
       border-color: #6c63ff;
-    }
-    @media screen and (max-width:500px) {
-      .joe_page_404 .title {
-        font-size: 20px;
-      }
-      .joe_page_404 .error_link {
-        padding: 10px 30px;
-      }
-    }
-    @media screen and (max-height:500px) {
-      .joe_page_404 .title {
-        font-size: 20px;
-      }
-      .joe_page_404 img {
-        width: 30%;
-      }
-      .joe_page_404 .error_link {
-        padding: 10px 30px;
-      }
     }
   </style>
   <head>
