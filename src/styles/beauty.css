@@ -30,37 +30,7 @@
   -o-object-fit: cover;
   object-fit: cover;
 }
-.evan-big-banner .infomation {
-  position: absolute;
-  line-height: 2;
-}
-.evan-big-banner .infomation .title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 0.1875rem 0.3125rem #1c1f21;
-  letter-spacing: 0.3rem;
-}
-.evan-big-banner .infomation .desctitle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #f3f3f3;
-  font-size: 1rem;
-  padding: 0 1rem;
-  text-shadow: 0 0.1875rem 0.3125rem #1c1f21;
-}
-.evan-big-banner .infomation .hitokoto_text {
-  text-shadow: none;
-}
-.evan-big-banner .infomation .hitokoto_form {
-  font-size: 14px;
-  text-shadow: none;
-}
-.evan-big-banner .infomation .evan-tiktok-text {
+.evan-big-banner .evan-tiktok-text {
   animation: uk-text-shadow-glitch 0.65s cubic-bezier(1, -1.91, 0, 2.79) 0s infinite normal both running;
 }
 .evan-big-banner .evan-big-banner_bottom {
@@ -168,19 +138,6 @@
     opacity: 1;
     transform: scale(1);
   }
-}
-/* 额外补充大图样式 */
-.evan-big-banner_goto {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 100px;
-}
-.evan-big-banner_goto .index-goto-icon {
-  font-size: 24px;
-  color: #fff;
-  animation: aniIndexGotoIcon 2s ease-in-out infinite;
-  display: inline-block;
 }
 @keyframes aniIndexGotoIcon {
   0% {

@@ -4811,51 +4811,38 @@ body:after {
   max-width: 100% !important;
 }
 .joe_pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 36px;
-  padding-bottom: 30px;
+  @apply flex items-center justify-center pt-9 pb-[30px];
 }
 .joe_pagination li {
-  margin-left: 5px;
-  user-select: none;
-  overflow: hidden;
+  @apply select-none overflow-hidden shadow-[var(--box-shadow-pager)] ml-[5px] rounded-[3px];
   background: var(--sib-background);
-  border-radius: 3px;
-  box-shadow: var(--box-shadow-pager);
 }
 .joe_pagination li a {
-  display: block;
-  height: 32px;
-  line-height: 32px;
-  padding: 0 14px;
-  color: var(--main);
+  @apply block h-8 leading-8 text-[color:var(--main)] px-3.5 py-0 hover:text-white;
 }
 .joe_pagination li a:hover {
-  color: #fff;
   background: var(--theme);
 }
 .joe_pagination li.prev {
-  border-radius: 6px 3px 3px 6px;
+  @apply rounded-[6px_3px_3px_6px];
 }
 .joe_pagination li.next {
-  border-radius: 3px 6px 6px 3px;
+  @apply rounded-[3px_6px_6px_3px];
 }
 .joe_pagination li.active {
-  font-weight: 600;
+  @apply font-semibold shadow-[0_3px_20px_-2px_var(--theme)];
   background: var(--theme);
-  box-shadow: 0 3px 20px -2px var(--theme);
 }
 .joe_pagination li.active a {
-  color: #fff;
+  @apply text-white;
 }
 .joe_pagination li.disabled {
-  pointer-events: none;
+  @apply pointer-events-none;
 }
 .joe_pagination li.disabled a {
-  color: var(--classA);
+  @apply text-[color:var(--classA)];
 }
+
 .joe_action {
   pointer-events: none;
   position: fixed;
@@ -5266,9 +5253,9 @@ body:after {
 .joe_comment .comment-list .comment-list {
   padding-top: 0;
 }
-.joe_comment .joe_pagination {
+/* .joe_comment .joe_pagination {
   padding-top: 0;
-}
+} */
 .joe_run__day,
 .joe_run__hour,
 .joe_run__minute,

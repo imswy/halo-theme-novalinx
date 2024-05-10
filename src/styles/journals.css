@@ -430,9 +430,6 @@
 .joe_journal_comment {
   display: none;
 }
-.joe_pagination {
-  padding: 0 0 20px 0;
-}
 .page-journals .joe_detail {
   position: relative;
   overflow-y: hidden;
