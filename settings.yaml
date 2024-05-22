@@ -2517,11 +2517,6 @@ spec:
               value:
               language: html
 
-
-
-
-
-
     - group: footer
       label: 页脚
       formSchema:
