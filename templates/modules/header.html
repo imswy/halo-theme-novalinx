@@ -1,0 +1,49 @@
+<header class="navbar bg-base-100">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+        </svg>
+      </div>
+
+      <ul tabindex="0" class="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
+        <th:block th:with="menu = ${menuFinder.getPrimary()}">
+          <li th:each="menuItem : ${menu.menuItems}">
+            <th:block th:if="${not #lists.isEmpty(menuItem.children)}">
+              <a th:text="${menuItem.status.displayName}">
+                <!-- 如果有子菜单，则生成嵌套的 ul -->
+                <ul class="p-2">
+                  <li th:each="subMenu : ${menuItem.children}">
+                    <a th:text="${subMenu.status.displayName}" th:href="${subMenu.status.href}"></a>
+                  </li>
+                </ul>
+              </a>
+            </th:block>
+            <a th:unless th:href="${menuItem.status.href}" th:text="${menuItem.status.displayName}"></a>
+          </li>
+        </th:block>
+      </ul>
+    </div>
+    <a class="btn btn-ghost text-xl" th:text="${site.title}" href="/"></a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <th:block th:with="menu = ${menuFinder.getPrimary()}">
+        <li th:each="menuItem : ${menu.menuItems}">
+          <a th:href="${menuItem.status.href}" th:text="${menuItem.status.displayName}">
+            <!-- 如果有子菜单，则生成嵌套的 ul -->
+            <ul th:if="${not #lists.isEmpty(menuItem.children)}" class="p-2">
+              <li th:each="subMenu : ${menuItem.children}">
+                <a th:text="${subMenu.status.displayName}" th:href="${subMenu.status.href}"></a>
+              </li>
+            </ul>
+          </a>
+        </li>
+      </th:block>
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <a class="btn">Button</a>
+  </div>
+</header>
